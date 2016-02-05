@@ -1,0 +1,13 @@
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.dll.config
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.dll
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.pdb
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\View\ObjectsPropertiesView.g.cs
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties_MarkupCompile.cache
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties_MarkupCompile.lref
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\View\ObjectsPropertiesView.baml
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.g.resources
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.Properties.Resources.resources
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csproj.GenerateResource.Cache
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.dll
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.pdb
