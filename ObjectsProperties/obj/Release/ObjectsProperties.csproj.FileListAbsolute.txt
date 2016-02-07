@@ -11,3 +11,4 @@ D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsPropert
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csproj.GenerateResource.Cache
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.dll
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.pdb
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csprojResolveAssemblyReference.cache

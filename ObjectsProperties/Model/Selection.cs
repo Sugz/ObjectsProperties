@@ -9,7 +9,7 @@ using ObjectsProperties.Src;
 
 namespace ObjectsProperties.Model
 {
-    public class SelectedNodes : INotifyPropertyChanged
+    public class Selection : INotifyPropertyChanged
     {
 
         #region Fields
@@ -39,7 +39,7 @@ namespace ObjectsProperties.Model
         #region Constructor
 
 
-        public SelectedNodes()
+        public Selection()
         {
             // Initialize Lists
             Nodes = new List<IINode>();

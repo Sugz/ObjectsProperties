@@ -27,7 +27,7 @@ namespace ObjectsProperties.ViewModel
         #region Properties
 
 
-        public SelectedNodes SelectedNodes { get; private set; }
+        public Selection Selection { get; private set; }
         public bool NameTxtReadOnly { get; private set; }
 
         private string nameTxt;
@@ -37,7 +37,7 @@ namespace ObjectsProperties.ViewModel
             set
             {
                 nameTxt = value;
-                SelectedNodes.RenameNode(nameTxt);
+                Selection.RenameNode(nameTxt);
             }
         }
 
@@ -57,9 +57,9 @@ namespace ObjectsProperties.ViewModel
 
         public ObjectsPropertiesVM()
         {
-            SelectedNodes = new SelectedNodes();
-            SelectedNodes.PropertyChanged += SelectedNodes_SelectionSetChanged;
-            SelectedNodes.GetSelection();
+            Selection = new Selection();
+            Selection.PropertyChanged += Selection_SelectionSetChanged;
+            Selection.GetSelection();
         }
 
 
@@ -73,11 +73,11 @@ namespace ObjectsProperties.ViewModel
         #region Private
 
 
-        private void SelectedNodes_SelectionSetChanged(object sender, PropertyChangedEventArgs e)
+        private void Selection_SelectionSetChanged(object sender, PropertyChangedEventArgs e)
         {
             // Set the name text field
-            SetNameTxt(SelectedNodes.Count);
-            SetMaterialTxt(SelectedNodes.Count);
+            SetNameTxt(Selection.Count);
+            SetMaterialTxt(Selection.Count);
 
         }
 
@@ -95,7 +95,7 @@ namespace ObjectsProperties.ViewModel
                     NameTxtReadOnly = true;
                     break;
                 case 1:
-                    if (SelectedNodes.Names.Count > 0) nameTxt = SelectedNodes.Names[0];
+                    if (Selection.Names.Count > 0) nameTxt = Selection.Names[0];
                     NameTxtReadOnly = false;
                     break;
                 default:
@@ -121,10 +121,10 @@ namespace ObjectsProperties.ViewModel
             if (count >= 1)
             {
                 // Get the first node material name and compare it to the rest of the selection
-                MaterialTxt = (SelectedNodes.Materials[0] != null) ? SelectedNodes.Materials[0].Name : "Unassign";
+                MaterialTxt = (Selection.Materials[0] != null) ? Selection.Materials[0].Name : "Unassign";
                 for (int i = 1; i < count; i++)
                 {
-                    string otherMaterial = (SelectedNodes.Materials[i] != null) ? SelectedNodes.Materials[i].Name : "Unassign";
+                    string otherMaterial = (Selection.Materials[i] != null) ? Selection.Materials[i].Name : "Unassign";
                     if (otherMaterial != MaterialTxt)
                     {
                         MaterialTxt = "Multiple";
