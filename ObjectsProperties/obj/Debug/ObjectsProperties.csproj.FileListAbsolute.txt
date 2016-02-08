@@ -12,17 +12,3 @@ D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsPropertie
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.csproj.GenerateResource.Cache
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.dll
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.pdb
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Debug\ObjectsProperties.dll.config
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Debug\ObjectsProperties.dll
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Debug\ObjectsProperties.pdb
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.csprojResolveAssemblyReference.cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\Views\ObjectsPropertiesView.g.cs
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties_MarkupCompile.cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties_MarkupCompile.lref
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\Views\ObjectsPropertiesView.baml
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.g.resources
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.Properties.Resources.resources
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.csproj.GenerateResource.Cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.dll
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Debug\ObjectsProperties.pdb

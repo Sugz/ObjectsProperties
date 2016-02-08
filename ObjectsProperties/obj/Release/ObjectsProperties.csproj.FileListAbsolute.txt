@@ -12,16 +12,3 @@ D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsPropert
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.dll
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.pdb
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csprojResolveAssemblyReference.cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.dll.config
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.dll
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\bin\Release\ObjectsProperties.pdb
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\Views\ObjectsPropertiesView.g.cs
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\GeneratedInternalTypeHelper.g.cs
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties_MarkupCompile.cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties_MarkupCompile.lref
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\Views\ObjectsPropertiesView.baml
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.g.resources
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.Properties.Resources.resources
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csproj.GenerateResource.Cache
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.dll
-C:\Users\cplantec\Desktop\Scripting\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.pdb

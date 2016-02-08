@@ -4,14 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Max;
-using ObjectsProperties.Src;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Model
 {
     public class Node
     {
-
-        #region Properties
 
 
         /// <summary>
@@ -21,17 +18,9 @@ namespace ObjectsProperties.Models
 
         
         /// <summary>
-        /// Get and set node's name
+        /// Get node's name
         /// </summary>
-        public string Name
-        {
-            get { return _Node.Name; }
-            set 
-            { 
-                _Node.Name = value;
-                //MaxUtils.Global.BroadcastNotification(SystemNotificationCode.NodeRenamed, _Node);
-            }
-        }
+        public string Name { get; private set; }
 
 
         /// <summary>
@@ -110,39 +99,9 @@ namespace ObjectsProperties.Models
         }
 
 
-        /// <summary>
-        /// Get node's material
-        /// TODO: implement a setter
-        /// </summary>
-        public Material Mtl
-        {
-            // Check if the node have a material assign
-            get { return (_Node.Mtl != null) ? new Material(_Node.Mtl) : null; }
-        }
-
-
-        /// <summary>
-        /// Get the node's selection state.
-        /// Select or deselect node.
-        /// </summary>
-        public bool IsSelected
-        {
-            get { return _Node.Selected; }
-            set
-            {
-                if (value)
-                    MaxUtils.Interface.SelectNode(_Node, false);
-                else
-                    MaxUtils.Interface.DeSelectNode(_Node);
-            }
-        }
-
-
-        #endregion
-
-
 
         #region Constructor
+
 
         public Node(IINode node)
         {

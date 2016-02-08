@@ -1,18 +1,18 @@
-﻿<UserControl x:Class="ObjectsProperties.Views.ObjectsPropertiesView"
+﻿<UserControl x:Class="ObjectsProperties.View.ObjectsPropertiesView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:vm="clr-namespace:ObjectsProperties.ViewModels" 
+             xmlns:vm="clr-namespace:ObjectsProperties.ViewModel" 
              UseLayoutRounding="True"
              MinWidth="300" 
              MinHeight="300"
              MaxWidth="300" 
              MaxHeight="300">
 
-    <UserControl.DataContext>
-        <vm:ObjectsPropertiesVM/>
-    </UserControl.DataContext>
+    <UserControl.Resources>
+        <vm:ObjectsPropertiesVM x:Key="ObjectsPropertiesVM"/>
+    </UserControl.Resources>
 
     <Grid Background="#FF444444" 
           Width="300" 
@@ -27,7 +27,7 @@
                    Foreground="#FFE1E1E1" />
 
         <TextBox Name="NameTxt"
-                 Text="{Binding NameTxt, UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding Path=NameTxt, Source={StaticResource ObjectsPropertiesVM}, UpdateSourceTrigger=PropertyChanged}"
                  TextWrapping="Wrap" 
                  FontSize="11" 
                  Height="16" 
@@ -37,7 +37,7 @@
                  Background="#FF505050" 
                  BorderBrush="#FF6E6E6E" 
                  Foreground="#FFE1E1E1" 
-                 IsReadOnly="{Binding NameTxtReadOnly, Mode=OneWay}"/>
+                 IsReadOnly="{Binding Path=NameTxtReadOnly, Mode=OneWay, Source={StaticResource ObjectsPropertiesVM}}"/>
 
         <TextBlock Text="Material :" 
                    TextWrapping="Wrap"
@@ -48,7 +48,7 @@
                    Foreground="#FFE1E1E1" />
 
         <TextBox Name="MaterialTxt"
-                 Text="{Binding MaterialTxt}"
+                 Text="{Binding Path=MaterialTxt, Source={StaticResource ObjectsPropertiesVM}}"
                  TextWrapping="Wrap" 
                  FontSize="11" 
                  Height="16" 
@@ -60,7 +60,7 @@
                  Foreground="#FFE1E1E1" 
                  IsReadOnly="True"/>
 
-        <Button x:Name="FrozenBtn" Content="Frozen" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectFirstNodes}"/>
+        <Button x:Name="FrozenBtn" Content="Frozen" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108"/>
 
     </Grid>
 </UserControl>

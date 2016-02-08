@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Autodesk.Max;
 using ObjectsProperties.Src;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Model
 {
     public class Selection : INotifyPropertyChanged
     {
@@ -16,6 +16,7 @@ namespace ObjectsProperties.Models
 
 
         private GlobalDelegates.Delegate5 SelectionSetChanged;                                      // Define the SelectionSetChanged notification callback
+        private List<string> names = new List<string>();
 
 
         #endregion
@@ -25,8 +26,10 @@ namespace ObjectsProperties.Models
         #region Properties
 
 
-        public List<Node> Nodes { get; private set; }
-        public int Count { get { return Nodes.Count; } }
+        public List<IINode> Nodes { get; private set; }
+        public int Count { get; private set; }
+        public List<string> Names { get { return names; } }
+        public List<IMtl> Materials { get; private set; }
 
 
         #endregion
@@ -38,8 +41,9 @@ namespace ObjectsProperties.Models
 
         public Selection()
         {
-            // Initialize Nodes list
-            Nodes = new List<Node>();
+            // Initialize Lists
+            Nodes = new List<IINode>();
+            Materials = new List<IMtl>();
 
             // Register the notification callbacks
             SelectionSetChanged = new GlobalDelegates.Delegate5(SelectionSetChangedCallback);
@@ -70,6 +74,21 @@ namespace ObjectsProperties.Models
         }
 
 
+        /// <summary>
+        /// Set the lists properties
+        /// </summary>
+        private void SetLists()
+        {
+            names.Clear();
+            Materials.Clear();
+
+            foreach (IINode node in Nodes)
+            {
+                names.Add(node.Name);
+                Materials.Add(node.Mtl);
+            }
+        }
+
 
         #endregion
 
@@ -83,14 +102,32 @@ namespace ObjectsProperties.Models
         public void GetSelection()
         {
             // Reset the Nodes list and set it given the new selection
+            Count = MaxUtils.Interface.SelNodeCount;
             Nodes.Clear();
-            for (int i = 0; i < MaxUtils.Interface.SelNodeCount; i++)
+            if (Count > 0)
             {
-                Nodes.Add(new Node(MaxUtils.Interface.GetSelNode(i)));
+                for (int i = 0; i < Count; i++)
+                {
+                    Nodes.Add(MaxUtils.Interface.GetSelNode(i));
+                }
             }
 
-            // Fire the event
+            // Set the lists and fire the event
+            SetLists();
             OnPropertyChanged("Nodes");
+        }
+
+
+        /// <summary>
+        /// Rename selected node when selection only contain one object
+        /// </summary>
+        /// <param name="name">The new name for the node</param>
+        public void RenameNode(string name)
+        {
+            if (Count == 1)
+            {
+                Nodes[0].Name = name;
+            }
         }
 
 
