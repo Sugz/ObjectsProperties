@@ -5,11 +5,12 @@ using System.Text;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Autodesk.Max;
-using ObjectsProperties.Model;
+using ObjectsProperties.Models;
 using ObjectsProperties.Src;
+using System.Windows.Input;
 
 
-namespace ObjectsProperties.ViewModel
+namespace ObjectsProperties.ViewModels
 {
     public class ObjectsPropertiesVM : INotifyPropertyChanged
     {
@@ -17,7 +18,8 @@ namespace ObjectsProperties.ViewModel
         #region Fields
 
 
-
+        private ICommand _selectFirstNodes;
+        private bool _canSelectFirstNodes;
 
 
         #endregion
@@ -37,14 +39,18 @@ namespace ObjectsProperties.ViewModel
             set
             {
                 nameTxt = value;
-                Selection.RenameNode(nameTxt);
+                Selection.Nodes[0].Name = nameTxt;
             }
         }
 
         public string MaterialTxt { get; set; }
 
 
-
+        
+        public ICommand SelectFirstNodes
+        {
+            get { return _selectFirstNodes ?? (_selectFirstNodes = new Command(() => SelectFirstNodesAction(), _canSelectFirstNodes)); }
+        }
 
 
 
@@ -60,6 +66,8 @@ namespace ObjectsProperties.ViewModel
             Selection = new Selection();
             Selection.PropertyChanged += Selection_SelectionSetChanged;
             Selection.GetSelection();
+
+            _canSelectFirstNodes = true;
         }
 
 
@@ -95,7 +103,7 @@ namespace ObjectsProperties.ViewModel
                     NameTxtReadOnly = true;
                     break;
                 case 1:
-                    if (Selection.Names.Count > 0) nameTxt = Selection.Names[0];
+                    nameTxt = Selection.Nodes[0].Name;
                     NameTxtReadOnly = false;
                     break;
                 default:
@@ -120,22 +128,37 @@ namespace ObjectsProperties.ViewModel
             MaterialTxt = "";
             if (count >= 1)
             {
-                // Get the first node material name and compare it to the rest of the selection
-                MaterialTxt = (Selection.Materials[0] != null) ? Selection.Materials[0].Name : "Unassign";
+                MaterialTxt = (Selection.Nodes[0].Mtl != null) ? Selection.Nodes[0].Mtl.Name : "Unassign";
                 for (int i = 1; i < count; i++)
                 {
-                    string otherMaterial = (Selection.Materials[i] != null) ? Selection.Materials[i].Name : "Unassign";
-                    if (otherMaterial != MaterialTxt)
+                    if (MaterialTxt != ((Selection.Nodes[i].Mtl != null) ? Selection.Nodes[i].Mtl.Name : "Unassign"))
                     {
                         MaterialTxt = "Multiple";
                         break;
                     }
                 }
             }
-
+            
             // Fire the event
             OnPropertyChanged("MaterialTxt");
         }
+
+
+        #endregion
+
+
+
+        #region Public
+
+        /// <summary>
+        /// Select first nodes
+        /// </summary>
+        public void SelectFirstNodesAction()
+        {
+            foreach (Node node in Scene.FirstNodes)
+                node.IsSelected = true;
+        }
+
 
 
         #endregion

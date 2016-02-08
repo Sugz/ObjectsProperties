@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UiViewModels.Actions;
-using ObjectsProperties.View;
+using ObjectsProperties.Views;
 
 namespace ObjectsProperties.Src
 {

@@ -9,11 +9,12 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ObjectsProperties</RootNamespace>
     <AssemblyName>ObjectsProperties</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -62,21 +63,23 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Node.cs" />
-    <Compile Include="Model\Scene.cs" />
+    <Compile Include="Models\Material.cs" />
+    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\Scene.cs" />
+    <Compile Include="Src\Command.cs" />
     <Compile Include="Src\Loader.cs" />
     <Compile Include="Src\MaxUtils.cs" />
-    <Compile Include="ViewModel\ObjectsPropertiesVM.cs" />
-    <Compile Include="View\ObjectsPropertiesView.xaml.cs">
+    <Compile Include="ViewModels\ObjectsPropertiesVM.cs" />
+    <Compile Include="Views\ObjectsPropertiesView.xaml.cs">
       <DependentUpon>ObjectsPropertiesView.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\ObjectsPropertiesView.xaml">
+    <Page Include="Views\ObjectsPropertiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Selection.cs" />
+    <Compile Include="Models\Selection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -105,6 +108,9 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "C:\Program Files\Autodesk\3ds Max 2016\bin\assemblies\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
