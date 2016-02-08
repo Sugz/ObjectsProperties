@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Autodesk.Max;
 using ObjectsProperties.Src;
 
-namespace ObjectsProperties.Model
+namespace ObjectsProperties.Models
 {
     public class Scene
     {
@@ -22,7 +22,7 @@ namespace ObjectsProperties.Model
         /// <summary>
         /// Get the nodes without parent
         /// </summary>
-        public IEnumerable<Node> FirstNodes
+        public static IEnumerable<Node> FirstNodes
         {
             get { return Root.Children; }
            
@@ -31,7 +31,7 @@ namespace ObjectsProperties.Model
         /// <summary>
         /// Get all the nodes
         /// </summary>
-        public IEnumerable<Node> AllNodes
+        public static IEnumerable<Node> AllNodes
         {
             get { return Root.ChildrenTree; }
         }

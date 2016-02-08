@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ObjectsProperties.View
+namespace ObjectsProperties.Views
 {
     /// <summary>
     /// Interaction logic for ObjectsPropertiesView.xaml
@@ -24,5 +24,6 @@ namespace ObjectsProperties.View
         {
             InitializeComponent();
         }
+
     }
 }
