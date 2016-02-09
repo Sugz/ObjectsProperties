@@ -4,11 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:ObjectsProperties.ViewModels" 
-             UseLayoutRounding="True"
-             MinWidth="300" 
+             UseLayoutRounding="True">
+    <!--MinWidth="300" 
              MinHeight="300"
              MaxWidth="300" 
-             MaxHeight="300">
+             MaxHeight="300">-->
 
     <UserControl.DataContext>
         <vm:ObjectsPropertiesVM/>
@@ -60,7 +60,21 @@
                  Foreground="#FFE1E1E1" 
                  IsReadOnly="True"/>
 
-        <Button x:Name="FrozenBtn" Content="Frozen" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectFirstNodes}"/>
+        <Button x:Name="SelectRootsBtn" Content="Select Roots" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=SelectRootsBtn}"/>
+        <Button x:Name="testBtn" Content="Test" HorizontalAlignment="Left" Margin="131,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=testBtn}"/>
+
+        <TextBox Name="CheckBtnTxt"
+                 Text="{Binding CheckBtnTxt}"
+                 TextWrapping="Wrap" 
+                 FontSize="11" 
+                 Height="16" 
+                 VerticalAlignment="Top" 
+                 Margin="28,117,32,0" 
+                 Padding="1,-2,1,0" 
+                 Background="#FF505050" 
+                 BorderBrush="#FF6E6E6E" 
+                 Foreground="#FFE1E1E1" 
+                 IsReadOnly="True"/>
 
     </Grid>
 </UserControl>

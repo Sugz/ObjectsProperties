@@ -21,7 +21,10 @@ namespace ObjectsProperties.Src
 
         public override object CreateDockableContent() { return new ObjectsPropertiesView(); }
 
-        public override DockStates.Dock DockingModes { get { return DockStates.Dock.Floating; } }
+        public override DockStates.Dock DockingModes { get { return DockStates.Dock.Left | DockStates.Dock.Floating; } }
+
+        public override bool IsMainContent { get { return true; } }
+
 
     }
 }

@@ -78,7 +78,7 @@ namespace ObjectsProperties.Models
                 //    return new Node(_Node.ParentNode);
                 //else
                 //    return Scene.Root;
-                return (_Node.ParentNode != Scene.Root) ? new Node(_Node.ParentNode) : Scene.Root;
+                return (_Node.ParentNode != Scene.Root._Node) ? new Node(_Node.ParentNode) : Scene.Root;
             }
 
             set

@@ -8,7 +8,7 @@ using Autodesk.Max;
 using ObjectsProperties.Models;
 using ObjectsProperties.Src;
 using System.Windows.Input;
-
+using System.Windows.Controls;
 
 namespace ObjectsProperties.ViewModels
 {
@@ -18,9 +18,10 @@ namespace ObjectsProperties.ViewModels
         #region Fields
 
 
-        private ICommand _selectFirstNodes;
-        private bool _canSelectFirstNodes;
+        private ICommand _selectByProperties;
+        //private bool _canSelectFirstNodes;
 
+        
 
         #endregion
 
@@ -46,11 +47,20 @@ namespace ObjectsProperties.ViewModels
         public string MaterialTxt { get; set; }
 
 
-        
-        public ICommand SelectFirstNodes
+
+        /// <summary>
+        /// ***** For Test only **********
+        /// </summary>
+        public string CheckBtnTxt { get; private set; }
+
+
+
+        public ICommand SelectByProperties
         {
-            get { return _selectFirstNodes ?? (_selectFirstNodes = new Command(() => SelectFirstNodesAction(), _canSelectFirstNodes)); }
+            //get { return _selectFirstNodes ?? (_selectFirstNodes = new Command(() => SelectFirstNodesAction(), _canSelectFirstNodes)); }
+            get { return _selectByProperties ?? (_selectByProperties = new Command(SelectByPropertiesAction)); }
         }
+
 
 
 
@@ -67,7 +77,7 @@ namespace ObjectsProperties.ViewModels
             Selection.PropertyChanged += Selection_SelectionSetChanged;
             Selection.GetSelection();
 
-            _canSelectFirstNodes = true;
+            //_canSelectFirstNodes = true;
         }
 
 
@@ -153,12 +163,20 @@ namespace ObjectsProperties.ViewModels
         /// <summary>
         /// Select first nodes
         /// </summary>
-        public void SelectFirstNodesAction()
+        //public void SelectFirstNodesAction()
+        //{
+        //    foreach (Node node in Scene.FirstNodes)
+        //        node.IsSelected = true;
+        //}
+        public void SelectByPropertiesAction(object button)
         {
-            foreach (Node node in Scene.FirstNodes)
-                node.IsSelected = true;
+            Button clickedbutton = button as Button;
+            if (clickedbutton != null)
+            {
+                CheckBtnTxt = clickedbutton.Content.ToString();
+                OnPropertyChanged("CheckBtnTxt");
+            }
         }
-
 
 
         #endregion

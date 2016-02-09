@@ -67,6 +67,7 @@
     <Compile Include="Models\Node.cs" />
     <Compile Include="Models\Scene.cs" />
     <Compile Include="Src\Command.cs" />
+    <Compile Include="Src\CuiLoader.cs" />
     <Compile Include="Src\Loader.cs" />
     <Compile Include="Src\MaxUtils.cs" />
     <Compile Include="ViewModels\ObjectsPropertiesVM.cs" />
