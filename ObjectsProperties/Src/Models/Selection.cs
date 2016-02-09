@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Max;
-using ObjectsProperties.Src;
+using ObjectsProperties.Src.Commands;
+using ObjectsProperties.Src.Helpers;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Src.Models
 {
     public class Selection : INotifyPropertyChanged
     {
@@ -92,6 +93,7 @@ namespace ObjectsProperties.Models
             // Fire the event
             OnPropertyChanged("Nodes");
         }
+
 
 
         #endregion

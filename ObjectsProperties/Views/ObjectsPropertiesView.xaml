@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:ObjectsProperties.ViewModels" 
-             UseLayoutRounding="True">
-    <!--MinWidth="300" 
-             MinHeight="300"
-             MaxWidth="300" 
+             UseLayoutRounding="True"
+             MinWidth="300" 
+             MinHeight="300">
+             <!--MaxWidth="300" 
              MaxHeight="300">-->
 
     <UserControl.DataContext>
@@ -60,8 +60,8 @@
                  Foreground="#FFE1E1E1" 
                  IsReadOnly="True"/>
 
-        <Button x:Name="SelectRootsBtn" Content="Select Roots" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=SelectRootsBtn}"/>
-        <Button x:Name="testBtn" Content="Test" HorizontalAlignment="Left" Margin="131,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=testBtn}"/>
+        <Button x:Name="SelectRootsBtn" Content="Select Roots" Tag="roots" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=SelectRootsBtn}"/>
+        <Button x:Name="testBtn" Content="Test" Tag="test"  HorizontalAlignment="Left" Margin="131,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=testBtn}"/>
 
         <TextBox Name="CheckBtnTxt"
                  Text="{Binding CheckBtnTxt}"

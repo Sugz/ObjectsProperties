@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Autodesk.Max;
-using ObjectsProperties.Src;
+using ObjectsProperties.Src.Helpers;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Src.Models
 {
-    public class Scene
+    public static class Scene
     {
         /// <summary>
         /// Get the Root node
@@ -25,7 +24,7 @@ namespace ObjectsProperties.Models
         public static IEnumerable<Node> FirstNodes
         {
             get { return Root.Children; }
-           
+
         }
 
         /// <summary>
@@ -37,6 +36,6 @@ namespace ObjectsProperties.Models
         }
 
 
-        
+
     }
 }

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Autodesk.Max;
-using ObjectsProperties.Models;
-using ObjectsProperties.Src;
 using System.Windows.Input;
 using System.Windows.Controls;
+using Autodesk.Max;
+using ObjectsProperties.Src.Commands;
+using ObjectsProperties.Src.Helpers;
+using ObjectsProperties.Src.Models;
+using ObjectsProperties.ViewModels.Helper;
 
 namespace ObjectsProperties.ViewModels
 {
@@ -58,7 +60,7 @@ namespace ObjectsProperties.ViewModels
         public ICommand SelectByProperties
         {
             //get { return _selectFirstNodes ?? (_selectFirstNodes = new Command(() => SelectFirstNodesAction(), _canSelectFirstNodes)); }
-            get { return _selectByProperties ?? (_selectByProperties = new Command(SelectByPropertiesAction)); }
+            get { return _selectByProperties ?? (_selectByProperties = new RelayCommand(SelectByPropertiesAction)); }
         }
 
 
@@ -163,18 +165,22 @@ namespace ObjectsProperties.ViewModels
         /// <summary>
         /// Select first nodes
         /// </summary>
-        //public void SelectFirstNodesAction()
-        //{
-        //    foreach (Node node in Scene.FirstNodes)
-        //        node.IsSelected = true;
-        //}
         public void SelectByPropertiesAction(object button)
         {
             Button clickedbutton = button as Button;
             if (clickedbutton != null)
             {
-                CheckBtnTxt = clickedbutton.Content.ToString();
-                OnPropertyChanged("CheckBtnTxt");
+                SelectCommand select = new SelectCommand();
+                switch(clickedbutton.Tag.ToString())
+                {
+                    case "roots":
+                        select.Select(Scene.FirstNodes);
+                        break;
+                    case "test":
+                        select.Deselect(Scene.FirstNodes);
+                        break;
+
+                }
             }
         }
 

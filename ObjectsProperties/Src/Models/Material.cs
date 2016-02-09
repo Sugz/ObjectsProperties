@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Max;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Src.Models
 {
     public class Material
     {
@@ -13,7 +13,7 @@ namespace ObjectsProperties.Models
         #region Properties
 
         /// <summary>
-        /// The material
+        /// The wrapped IMtl
         /// </summary>
         public IMtl _Mtl { get; private set; }
 

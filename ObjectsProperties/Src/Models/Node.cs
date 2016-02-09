@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Max;
-using ObjectsProperties.Src;
+using ObjectsProperties.Src.Helpers;
 
-namespace ObjectsProperties.Models
+namespace ObjectsProperties.Src.Models
 {
     public class Node
     {
@@ -19,15 +19,15 @@ namespace ObjectsProperties.Models
         /// </summary>
         public IINode _Node { get; private set; }
 
-        
+
         /// <summary>
         /// Get and set node's name
         /// </summary>
         public string Name
         {
             get { return _Node.Name; }
-            set 
-            { 
+            set
+            {
                 _Node.Name = value;
                 //MaxUtils.Global.BroadcastNotification(SystemNotificationCode.NodeRenamed, _Node);
             }
@@ -128,13 +128,7 @@ namespace ObjectsProperties.Models
         public bool IsSelected
         {
             get { return _Node.Selected; }
-            set
-            {
-                if (value)
-                    MaxUtils.Interface.SelectNode(_Node, false);
-                else
-                    MaxUtils.Interface.DeSelectNode(_Node);
-            }
+            set { if (value) MaxUtils.Interface.SelectNode(_Node, false); else MaxUtils.Interface.DeSelectNode(_Node); }
         }
 
 

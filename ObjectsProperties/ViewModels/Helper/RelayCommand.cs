@@ -5,18 +5,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ObjectsProperties.Src
+namespace ObjectsProperties.ViewModels.Helper
 {
-    public class Command : ICommand
+    public class RelayCommand : ICommand
     {
         private Action<object> _action;
         private Predicate<object> _canExecute;
 
 
-        public Command(Action<object> execute) : this(execute, null) { }
+        public RelayCommand(Action<object> execute) : this(execute, null) { }
 
 
-        public Command(Action<object> action, Predicate<object> canExecute)
+        public RelayCommand(Action<object> action, Predicate<object> canExecute)
         {
             //if (action == null) throw new ArgumentNullException("execute");
             _action = action;

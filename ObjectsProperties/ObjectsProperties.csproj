@@ -63,13 +63,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Material.cs" />
-    <Compile Include="Models\Node.cs" />
-    <Compile Include="Models\Scene.cs" />
-    <Compile Include="Src\Command.cs" />
-    <Compile Include="Src\CuiLoader.cs" />
+    <Compile Include="Src\Commands\Command.cs" />
+    <Compile Include="Src\Commands\SelectCommand.cs" />
+    <Compile Include="Src\Helpers\MaxUtils.cs" />
     <Compile Include="Src\Loader.cs" />
-    <Compile Include="Src\MaxUtils.cs" />
+    <Compile Include="Src\Models\Material.cs" />
+    <Compile Include="Src\Models\Node.cs" />
+    <Compile Include="Src\Models\Scene.cs" />
+    <Compile Include="Src\Models\Selection.cs" />
+    <Compile Include="ViewModels\Helper\RelayCommand.cs" />
     <Compile Include="ViewModels\ObjectsPropertiesVM.cs" />
     <Compile Include="Views\ObjectsPropertiesView.xaml.cs">
       <DependentUpon>ObjectsPropertiesView.xaml</DependentUpon>
@@ -80,7 +82,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Selection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
