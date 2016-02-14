@@ -25,3 +25,4 @@ D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsPropert
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.dll
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.pdb
 D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\ObjectsProperties.csprojResolveAssemblyReference.cache
+D:\Travail\GitHub\ObjectsProperties\ObjectsProperties\obj\Release\Views\Styles\MaxToolbarStyle.baml

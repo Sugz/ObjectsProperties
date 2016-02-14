@@ -170,14 +170,13 @@ namespace ObjectsProperties.ViewModels
             Button clickedbutton = button as Button;
             if (clickedbutton != null)
             {
-                SelectCommand select = new SelectCommand();
                 switch(clickedbutton.Tag.ToString())
                 {
                     case "roots":
-                        select.Select(Scene.FirstNodes);
+                        SelectCommand select = new SelectCommand(Scene.FirstNodes, SelectType.Select);
                         break;
                     case "test":
-                        select.Deselect(Scene.FirstNodes);
+                        new SelectCommand(Scene.FirstNodes, SelectType.Deselect);
                         break;
 
                 }

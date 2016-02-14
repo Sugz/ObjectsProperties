@@ -45,7 +45,8 @@
     </Reference>
     <Reference Include="ManagedServices, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Program Files\Autodesk\3ds Max 2016\ManagedServices.dll</HintPath>
+      <HintPath>C:\Program Files\Autodesk\3ds Max 2016\ManagedServices.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -70,6 +71,7 @@
     <Compile Include="Src\Commands\Command.cs" />
     <Compile Include="Src\Commands\SelectCommand.cs" />
     <Compile Include="Src\Helpers\MaxUtils.cs" />
+    <Compile Include="Src\Helpers\NodeProperties.cs" />
     <Compile Include="Src\Loader.cs" />
     <Compile Include="Src\Models\Material.cs" />
     <Compile Include="Src\Models\Node.cs" />
