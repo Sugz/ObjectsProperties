@@ -73,15 +73,24 @@
     <Compile Include="Src\Helpers\MaxUtils.cs" />
     <Compile Include="Src\Helpers\NodeProperties.cs" />
     <Compile Include="Src\Loader.cs" />
+    <Compile Include="Src\Models\ActionManager.cs" />
     <Compile Include="Src\Models\Material.cs" />
     <Compile Include="Src\Models\Node.cs" />
     <Compile Include="Src\Models\Scene.cs" />
     <Compile Include="Src\Models\Selection.cs" />
     <Compile Include="ViewModels\Helper\RelayCommand.cs" />
+    <Compile Include="ViewModels\IsolateSelectionVM.cs" />
     <Compile Include="ViewModels\ObjectsPropertiesVM.cs" />
+    <Compile Include="Views\IsolateSelectionView.xaml.cs">
+      <DependentUpon>IsolateSelectionView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ObjectsPropertiesView.xaml.cs">
       <DependentUpon>ObjectsPropertiesView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\IsolateSelectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ObjectsPropertiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -118,7 +127,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Views\Icons\IsolateSelection_16.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(TargetPath)" "C:\Program Files\Autodesk\3ds Max 2016\bin\assemblies\$(TargetFileName)"</PostBuildEvent>

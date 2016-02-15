@@ -19,20 +19,40 @@ namespace ObjectsProperties.Src.Commands
         Deselect,
     }
 
-    public class SelectCommand : Command
+    public class SelectCommand : RestoreCommand
     {
 
         private IEnumerable<Node> _nodes;
         private SelectType _selectType;
+        private string _description;
 
+        private List<Node> _oldNodes = new List<Node>();
 
-        public override string Description { get { return "Select_Command"; } }
+        public override string Description { get { return _description; } }
 
 
         public SelectCommand(IEnumerable<Node> nodes, SelectType selectType)
         {
             _nodes = nodes;
             _selectType = selectType;
+
+            switch (_selectType)
+            {
+                case SelectType.Select:
+                    _description = "Select Command";
+                    break;
+                case SelectType.Add:
+                    _description = "Add to Selection Command";
+                    break;
+                case SelectType.Deselect:
+                    _description = "Deselect Command";
+                    break;
+            }
+
+            Selection sel = new Selection();
+            foreach (Node node in sel.Nodes)
+                _oldNodes.Add(node);
+
             Execute();
         }
 
@@ -40,7 +60,7 @@ namespace ObjectsProperties.Src.Commands
         /// <summary>
         /// Do the action corresponding to the SelectType
         /// </summary>
-        public override void Do()
+        public override void Redo()
         {
             switch (_selectType)
             {
@@ -58,6 +78,12 @@ namespace ObjectsProperties.Src.Commands
             }
         }
 
+        public override void Restore(bool isUndo)
+        {
+            MaxUtils.Interface.ClearNodeSelection(false);
+            foreach (Node node in _oldNodes)
+                node.IsSelected = true;
+        }
 
     }
 }

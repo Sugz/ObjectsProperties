@@ -16,19 +16,20 @@ namespace ObjectsProperties.ViewModels
 {
     public class ObjectsPropertiesVM : INotifyPropertyChanged
     {
-
+        // Fields
         #region Fields
 
 
         private ICommand _selectByProperties;
         //private bool _canSelectFirstNodes;
 
-        
-
-        #endregion
 
 
+        #endregion // End Fields
 
+
+
+        // Properties
         #region Properties
 
 
@@ -59,17 +60,17 @@ namespace ObjectsProperties.ViewModels
 
         public ICommand SelectByProperties
         {
-            //get { return _selectFirstNodes ?? (_selectFirstNodes = new Command(() => SelectFirstNodesAction(), _canSelectFirstNodes)); }
             get { return _selectByProperties ?? (_selectByProperties = new RelayCommand(SelectByPropertiesAction)); }
         }
 
 
 
 
-        #endregion
+        #endregion // End Properties
 
 
 
+        // Constructor
         #region Constructor
 
 
@@ -77,19 +78,20 @@ namespace ObjectsProperties.ViewModels
         {
             Selection = new Selection();
             Selection.PropertyChanged += Selection_SelectionSetChanged;
-            Selection.GetSelection();
 
             //_canSelectFirstNodes = true;
         }
 
 
-        #endregion
+        #endregion // End Constructor
 
 
 
+        // Methods
         #region Methods
 
 
+        // Private
         #region Private
 
 
@@ -156,10 +158,11 @@ namespace ObjectsProperties.ViewModels
         }
 
 
-        #endregion
+        #endregion // End Private
 
 
 
+        // Public
         #region Public
 
         /// <summary>
@@ -184,13 +187,13 @@ namespace ObjectsProperties.ViewModels
         }
 
 
-        #endregion
+        #endregion // End Public
 
 
-        #endregion
+        #endregion // End Methods
 
 
-
+        // Events
         #region Events
 
 
@@ -204,7 +207,7 @@ namespace ObjectsProperties.ViewModels
         }
 
 
-        #endregion
+        #endregion // End Events
 
     }
 }

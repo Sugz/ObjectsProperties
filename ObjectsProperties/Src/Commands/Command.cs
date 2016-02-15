@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autodesk.Max;
+using Autodesk.Max.Plugins;
 using ObjectsProperties.Src.Helpers;
 
 namespace ObjectsProperties.Src.Commands
@@ -11,28 +12,22 @@ namespace ObjectsProperties.Src.Commands
     /// <summary>
     /// Defines a baseclass for commands that can be registered in the 3dsmax undo system.
     /// </summary>
-    public abstract class Command
-    {
-        /// <summary>
-        /// The description of the command.
-        /// </summary>
-        public abstract String Description { get; }
+   public abstract class RestoreCommand : RestoreObj
+   {
+       public void Execute() { this.Execute(false); }
 
-        /// <summary>
-        /// This method should contain the logic to modify the scene when executing the command.
-        /// </summary>
-        public abstract void Do();
+       public void Execute(Boolean redrawViews)
+       {
+           IHold theHold = MaxUtils.TheHold;
+           theHold.Begin();
 
-        /// <summary>
-        /// Executes the command in an undo context.
-        /// </summary>
-        public virtual void Execute()
-        {
-            MaxUtils.Hold.Begin();
+           theHold.Put(this);
+           this.Redo();
 
-            Do();
+           theHold.Accept(this.Description);
 
-            MaxUtils.Hold.Accept(this.Description);
-        }
-    }
+           //if (redrawViews)
+           //    Viewprts.Redraw();
+       }
+   }
 }

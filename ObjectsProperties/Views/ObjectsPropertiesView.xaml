@@ -1,12 +1,14 @@
-﻿<UserControl x:Class="ObjectsProperties.Views.ObjectsPropertiesView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:ObjectsProperties.ViewModels"
+             xmlns:local="clr-namespace:ObjectsProperties.Views" x:Class="ObjectsProperties.Views.ObjectsPropertiesView"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300"
+             MinHeight="300"
              Style="{DynamicResource MaxToolbarStyle}">
+             
 
     <UserControl.Resources>
         <ResourceDictionary>
@@ -23,63 +25,66 @@
     <Grid Background="{DynamicResource Background}">
 
         <TextBlock Text="Name :" 
-                   TextWrapping="Wrap"
-                   FontSize="11"
-                   HorizontalAlignment="Left" 
-                   VerticalAlignment="Top" 
-                   Margin="5,10,0,0" 
-                   Foreground="#FFE1E1E1" />
+			TextWrapping="Wrap"
+			FontSize="11"
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top" 
+			Margin="5,10,0,0" 
+			Foreground="#FFE1E1E1" />
 
-        <TextBox Name="NameTxt"
-                 Text="{Binding NameTxt, UpdateSourceTrigger=PropertyChanged}"
-                 TextWrapping="Wrap" 
-                 FontSize="11" 
-                 Height="16" 
-                 VerticalAlignment="Top" 
-                 Margin="45,10,5,0" 
-                 Padding="1,-2,1,0" 
-                 Background="#FF505050" 
-                 BorderBrush="#FF6E6E6E" 
-                 Foreground="#FFE1E1E1" 
-                 IsReadOnly="{Binding NameTxtReadOnly, Mode=OneWay}"/>
+        <TextBox x:Name="NameTxt"
+			Text="{Binding NameTxt, UpdateSourceTrigger=PropertyChanged}"
+			TextWrapping="Wrap" 
+			FontSize="11" 
+			Height="16" 
+			VerticalAlignment="Top" 
+			Margin="45,10,5,0" 
+			Padding="1,-2,1,0" 
+			Background="#FF505050" 
+			BorderBrush="#FF6E6E6E" 
+			Foreground="#FFE1E1E1" 
+			IsReadOnly="{Binding NameTxtReadOnly, Mode=OneWay}"/>
 
         <TextBlock Text="Material :" 
-                   TextWrapping="Wrap"
-                   FontSize="11"
-                   HorizontalAlignment="Left" 
-                   VerticalAlignment="Top" 
-                   Margin="5,30,0,0" 
-                   Foreground="#FFE1E1E1" />
+			TextWrapping="Wrap"
+			FontSize="11"
+			HorizontalAlignment="Left" 
+			VerticalAlignment="Top" 
+			Margin="5,30,0,0" 
+			Foreground="#FFE1E1E1" />
 
-        <TextBox Name="MaterialTxt"
-                 Text="{Binding MaterialTxt}"
-                 TextWrapping="Wrap" 
-                 FontSize="11" 
-                 Height="16" 
-                 VerticalAlignment="Top" 
-                 Margin="55,30,5,0" 
-                 Padding="1,-2,1,0" 
-                 Background="#FF505050" 
-                 BorderBrush="#FF6E6E6E" 
-                 Foreground="#FFE1E1E1" 
-                 IsReadOnly="True"/>
+        <TextBox x:Name="MaterialTxt"
+			Text="{Binding MaterialTxt}"
+			TextWrapping="Wrap" 
+			FontSize="11" 
+			Height="16" 
+			VerticalAlignment="Top" 
+			Margin="55,30,5,0" 
+			Padding="1,-2,1,0" 
+			Background="#FF505050" 
+			BorderBrush="#FF6E6E6E" 
+			Foreground="#FFE1E1E1" 
+			IsReadOnly="True"/>
 
         <Button x:Name="SelectRootsBtn" Content="Select Roots" Tag="roots" HorizontalAlignment="Left" Margin="5,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=SelectRootsBtn}"/>
         <Button x:Name="testBtn" Content="Test" Tag="test"  HorizontalAlignment="Left" Margin="131,80,0,0" VerticalAlignment="Top" Width="108" Command="{Binding SelectByProperties}" CommandParameter="{Binding ElementName=testBtn}"/>
 
-        <TextBox Name="CheckBtnTxt"
-                 Text="{Binding CheckBtnTxt}"
-                 TextWrapping="Wrap" 
-                 FontSize="11" 
-                 Height="16" 
-                 VerticalAlignment="Top" 
-                 Margin="28,117,32,0" 
-                 Padding="1,-2,1,0" 
-                 Background="#FF505050" 
-                 BorderBrush="#FF6E6E6E" 
-                 Foreground="#FFE1E1E1" 
-                 IsReadOnly="True"/>
-        
+        <TextBox x:Name="CheckBtnTxt"
+			Text="{Binding CheckBtnTxt}"
+			TextWrapping="Wrap" 
+			FontSize="11" 
+			Height="16" 
+			VerticalAlignment="Top" 
+			Margin="28,117,32,0" 
+			Padding="1,-2,1,0" 
+			Background="#FF505050" 
+			BorderBrush="#FF6E6E6E" 
+			Foreground="#FFE1E1E1" 
+			IsReadOnly="True"/>
+
+
+        <local:IsolateSelectionView HorizontalAlignment="Left" Margin="28,188,0,0" VerticalAlignment="Top"/>
+
 
     </Grid>
 </UserControl>

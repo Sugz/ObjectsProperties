@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="ObjectsProperties.Views.IsolateSelectionView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:ObjectsProperties.ViewModels"
+             Width="250"
+             Height="20">
+
+    <UserControl.Resources>
+        <Polygon x:Key="LeftTriangle" Points="4,8 11,3 11,13" Fill="Black" UseLayoutRounding="True" />
+        <Polygon x:Key="RightTriangle" Points="12,8 5,3 5,13" Fill="Black" UseLayoutRounding="True" />
+        <Canvas x:Key="Bulb" Height="14" Width="10">
+            <Rectangle Fill="Black" Height="4" Canvas.Left="3" Canvas.Top="10" Width="4" UseLayoutRounding="True"/>
+            <Path Data="M3,14 L3,10 C3,10 0,6 0,4 0,0.5 3,0 4.5,0 6,0 9,0.5 9,4 9,6 6,10 6,10 L6,14" Fill="#FFD4525C" Height="14" Stretch="Fill" Stroke="Black" Width="10" UseLayoutRounding="True"/>
+            <Rectangle Fill="#FF91928E" Height="4" Canvas.Left="3.5" Canvas.Top="10" Width="2" UseLayoutRounding="True"/>
+            <Rectangle Fill="#FFFEFCFE" Height="3" Canvas.Left="3.5" Canvas.Top="11" Width="1" UseLayoutRounding="True"/>
+        </Canvas>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <vm:IsolateSelectionVM/>
+    </UserControl.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="{StaticResource LeftTriangle}" Padding="0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" />
+        <ComboBox Grid.Column="1" ItemsSource="{Binding Level, Mode=OneWay}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="{StaticResource RightTriangle}" Grid.Column="2" Padding="0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Button Grid.Column="3" Padding="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Command="{Binding SetIsolation, Mode=OneWay}">
+            <Image Source="/ObjectsProperties;component/Views/Icons/IsolateSelection_16.png" Stretch="Fill" RenderTransformOrigin="4.594,0.141" Height="14" Width="14" UseLayoutRounding="True"/>
+        </Button>
+
+
+    </Grid>
+</UserControl>

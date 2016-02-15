@@ -12,7 +12,7 @@ namespace ObjectsProperties.Src.Helpers
 
         public static IGlobal Global { get { return GlobalInterface.Instance; } }
         public static IInterface14 Interface { get { return Global.COREInterface14; } }
-        public static IHold Hold { get { return Global.TheHold; } }
+        public static IHold TheHold { get { return Global.TheHold; } }
 
     }
 }

@@ -46,6 +46,8 @@ namespace ObjectsProperties.Src.Models
             SelectionSetChanged = new GlobalDelegates.Delegate5(SelectionSetChangedCallback);
             MaxUtils.Global.RegisterNotification(SelectionSetChanged, null, SystemNotificationCode.SelectionsetChanged);
 
+            // Get the active selection
+            GetSelection();
         }
 
 
