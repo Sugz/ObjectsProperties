@@ -68,17 +68,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Src\Commands\Command.cs" />
-    <Compile Include="Src\Commands\SelectCommand.cs" />
-    <Compile Include="Src\Helpers\MaxUtils.cs" />
-    <Compile Include="Src\Helpers\NodeProperties.cs" />
-    <Compile Include="Src\Loader.cs" />
-    <Compile Include="Src\Models\ActionManager.cs" />
-    <Compile Include="Src\Models\Material.cs" />
-    <Compile Include="Src\Models\Node.cs" />
-    <Compile Include="Src\Models\Scene.cs" />
-    <Compile Include="Src\Models\Selection.cs" />
-    <Compile Include="ViewModels\Helper\RelayCommand.cs" />
+    <Compile Include="CuiLoader.cs" />
     <Compile Include="ViewModels\IsolateSelectionVM.cs" />
     <Compile Include="ViewModels\ObjectsPropertiesVM.cs" />
     <Compile Include="Views\IsolateSelectionView.xaml.cs">
@@ -129,6 +119,13 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\Icons\IsolateSelection_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SugzTools\CSharp\SugzTools\SugzTools\SugzTools.csproj">
+      <Project>{409a6418-9c0f-4fde-9421-6e1b76b14e6d}</Project>
+      <Name>SugzTools</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -1,51 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UiViewModels.Actions;
+using SugzTools.Max.Helpers;
 using ObjectsProperties.Views;
+using UiViewModels.Actions;
 
-namespace ObjectsProperties.Src
+namespace ObjectsProperties
 {
-    public class Loader : CuiDockableContentAdapter
+    public class CuiLoader : CustomCuiDockableContentAdapter
     {
 
+        // Fields
         #region Fields
 
+
         // Create an instance of the view to be able to modify it in this class
-        private ObjectsPropertiesView objectsPropertiesView = new ObjectsPropertiesView();
+        private ObjectsPropertiesView _View = new ObjectsPropertiesView();
 
 
-        #endregion
+        #endregion // End Fields
 
 
+        // Properties
         #region Properties
 
+
         public override string ActionText { get { return "Objects Properties"; } }
-        public override string Category { get { return "SugzTools"; } }
-        public override string WindowTitle { get { return "Objects Properties"; } }
         public override Type ContentType { get { return typeof(ObjectsPropertiesView); } }
         public override DockStates.Dock DockingModes { get { return DockStates.Dock.Left | DockStates.Dock.Floating; } }
-        public override bool IsMainContent { get { return true; } }
-
-        #endregion
 
 
+        #endregion // End Properties
+
+
+        // Methods
         #region Methods
 
-        public override object CreateDockableContent() { return objectsPropertiesView; }
+
+        public override object CreateDockableContent() { return _View; }
 
 
         // Modify the view based on the dockMode
         public override void SetContentDockMode(object dockableContent, DockStates.Dock dockMode)
         {
             base.SetContentDockMode(dockableContent, dockMode);
-            objectsPropertiesView.SetResizeBorders(dockMode);
+            _View.SetResizeBorders(dockMode);
         }
 
-        #endregion
 
+        #endregion // End Methods
 
     }
 }

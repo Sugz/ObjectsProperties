@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Controls;
 using Autodesk.Max;
-using ObjectsProperties.Src.Commands;
-using ObjectsProperties.Src.Helpers;
-using ObjectsProperties.Src.Models;
-using ObjectsProperties.ViewModels.Helper;
+using SugzTools.Max.Commands;
+using SugzTools.Max.Helpers;
+using SugzTools.Max.Models;
+using SugzTools.Src;
 
 namespace ObjectsProperties.ViewModels
 {

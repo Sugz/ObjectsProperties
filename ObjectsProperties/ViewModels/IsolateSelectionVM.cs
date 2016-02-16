@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using System.Threading.Tasks;
-using ObjectsProperties.Src.Models;
-using ObjectsProperties.ViewModels.Helper;
 using System.Collections.ObjectModel;
+using SugzTools.Max.Models;
+using SugzTools.Src;
+
 
 namespace ObjectsProperties.ViewModels
 {
