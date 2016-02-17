@@ -16,5 +16,5 @@ DEBUG;TRACE
 17-766786716
 Views\IsolateSelectionView.xaml;Views\ObjectsPropertiesView.xaml;Views\Styles\MaxToolbarStyle.xaml;
 
-True
+False
 

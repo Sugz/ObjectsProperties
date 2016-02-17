@@ -5,7 +5,7 @@ using UiViewModels.Actions;
 
 namespace ObjectsProperties
 {
-    public class CuiLoader : CustomCuiDockableContentAdapter
+    public class CuiLoader : Custom_CuiDockableContentAdapter
     {
 
         // Fields
